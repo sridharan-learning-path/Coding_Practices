@@ -1,3 +1,44 @@
 
+public class NumberofMaxSubArray {
+
+	public static void main(String[] args) {
+
+		int[] sample = {1,0,4};
+		
+		int num = iterationMethod(sample);
+		
+		System.out.println(num);
+		
+		num = formula(sample);
+		
+		System.out.println(num);
+
+	}
+
+	private static int formula(int[] sample) {
+
+		int arraylength = sample.length;
+		
+		//If Array Length is N, Total number of Sub Array is ((N*(N+1))/2)
+		
+		return ((arraylength * (arraylength+1))/2);
+	}
+
+	private static int iterationMethod(int[] sample) {
+		
+		int count=0;
+		
+		for (int i=0;i<sample.length;i++)
+		{
+			for(int j=i;j<sample.length;j++)
+			{
+				count=count+1;
+			}
+		}
+		
+		
+		return count;
+	}
+	}
 
 
